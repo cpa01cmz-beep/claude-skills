@@ -1,0 +1,56 @@
+name: Registry
+
+on:
+  pull_request:
+    paths:
+      - 'registry/**'
+      - '.claude-plugin/marketplace.json'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-submissions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Detect changed submission folders
+        id: changed
+        run: |
+          FOLDERS=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- registry/skills/ \
+            | grep '/' \
+            | cut -d'/' -f1-3 \
+            | sort -u \
+            | tr '\n' ' ')
+          echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
+          echo "Changed submission folders: $FOLDERS"
+
+      - name: Validate changed submissions
+        if: steps.changed.outputs.folders != ''
+        run: |
+          RESULT=0
+          for folder in ${{ steps.changed.outputs.folders }}; do
+            echo "::group::Validating $folder"
+            python registry/scripts/validate.py --clone "$folder" || RESULT=1
+            echo "::endgroup::"
+          done
+          exit $RESULT
+
+  check-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify index.json is in sync
+        run: python registry/scripts/build_index.py --check

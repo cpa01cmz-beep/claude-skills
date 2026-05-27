@@ -1,0 +1,14 @@
+{
+  "name": "example-skill",
+  "author": "alirezarezvani",
+  "description": "Example community submission. Copy this folder, point it at your own public repo that contains a SKILL.md, and open a PR. See registry/CONTRIBUTING.md.",
+  "repository": "https://github.com/alirezarezvani/claude-skills",
+  "path": "engineering/caveman/skills/caveman",
+  "version": "1.0.0",
+  "category": "productivity",
+  "tags": ["example", "template", "getting-started"],
+  "license": "MIT",
+  "adapters": ["claude-code", "codex", "gemini-cli"],
+  "icon": false,
+  "banner": false
+}

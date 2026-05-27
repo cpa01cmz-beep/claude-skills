@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/alirezarezvani/claude-skills/registry/schema/metadata.schema.json",
+  "title": "Claude Skills Registry Metadata",
+  "description": "Schema for a community skill submission's metadata.json in the claude-skills registry",
+  "type": "object",
+  "required": ["name", "author", "description", "repository", "version", "category", "tags", "license"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+      "minLength": 2,
+      "maxLength": 64,
+      "description": "Skill name (lowercase, hyphens only)"
+    },
+    "author": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-]*$",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "GitHub username of the author"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 300,
+      "description": "Short description of what the skill does"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://github\\.com/",
+      "description": "Public GitHub repository URL hosting the skill"
+    },
+    "path": {
+      "type": "string",
+      "maxLength": 256,
+      "description": "Subdirectory within repo where SKILL.md lives (default: root)"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+",
+      "description": "Semver version"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "development",
+        "data-engineering",
+        "devops",
+        "security",
+        "compliance",
+        "documentation",
+        "testing",
+        "research",
+        "productivity",
+        "finance",
+        "leadership",
+        "product",
+        "marketing",
+        "project-management",
+        "business-growth",
+        "commercial",
+        "operations",
+        "design",
+        "knowledge",
+        "customer-support",
+        "creative",
+        "education",
+        "other"
+      ],
+      "description": "Skill category"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "maxLength": 32
+      },
+      "minItems": 1,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "description": "Tags for discoverability"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "SPDX license identifier"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "Preferred model identifier (optional)"
+    },
+    "adapters": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Supported tools/adapters (e.g. claude-code, codex, gemini-cli)"
+    },
+    "icon": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether icon.png is included (256x256 PNG)"
+    },
+    "banner": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether banner.png is included (1200x630 PNG, used for social sharing / OG image)"
+    }
+  }
+}
