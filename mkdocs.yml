@@ -244,6 +244,7 @@ nav:
       - "Caveman Mode (Matt Pocock-derived)": skills/engineering/caveman.md
       - "Grill Me (Matt Pocock-derived)": skills/engineering/grill-me.md
       - "Handoff (Matt Pocock-derived)": skills/engineering/handoff.md
+      - "Workflow Builder": skills/engineering/workflow-builder.md
       - AgentHub:
         - "AgentHub": skills/engineering/agenthub.md
         - "/hub:init": skills/engineering/agenthub-init.md
@@ -523,6 +524,7 @@ nav:
     - "CS Caveman Mode (Matt Pocock-derived)": agents/cs-caveman-mode.md
     - "CS Grill Master (Matt Pocock-derived)": agents/cs-grill-master.md
     - "CS Handoff Author (Matt Pocock-derived)": agents/cs-handoff-author.md
+    - "CS Workflow Architect": agents/cs-workflow-architect.md
     - "CS BizOps Orchestrator (v2.8.0)": agents/cs-bizops-orchestrator.md
     - "CS Commercial Orchestrator (v2.8.0)": agents/cs-commercial-orchestrator.md
     - "CS Research Ops Orchestrator (v2.9.0)": agents/cs-research-ops-orchestrator.md
@@ -571,6 +573,7 @@ nav:
     - "/chaos-experiment": commands/chaos-experiment.md
     - "/slo-design": commands/slo-design.md
     - "/cs:aeo": commands/cs-aeo.md
+    - "/cs:workflow-build": commands/cs-workflow-build.md
     - "/cs:bizops (v2.8.0 — BizOps router)": commands/cs-bizops.md
     - "/cs:grill-bizops (v2.8.0 — Matt grill bizops)": commands/cs-grill-bizops.md
     - "/cs:process-map (v2.8.0)": commands/cs-process-map.md

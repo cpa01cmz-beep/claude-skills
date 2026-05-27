@@ -1,13 +1,13 @@
 ---
 title: "Slash Commands — AI Coding Agent Commands & Codex Shortcuts"
-description: "83 slash commands for Claude Code, Codex CLI, and Gemini CLI — sprint planning, tech debt analysis, PRDs, OKRs, and more."
+description: "84 slash commands for Claude Code, Codex CLI, and Gemini CLI — sprint planning, tech debt analysis, PRDs, OKRs, and more."
 ---
 
 <div class="domain-header" markdown>
 
 # :material-console: Slash Commands
 
-<p class="domain-count">83 commands for quick access to common operations</p>
+<p class="domain-count">84 commands for quick access to common operations</p>
 
 </div>
 
@@ -270,6 +270,12 @@ description: "83 slash commands for Claude Code, Codex CLI, and Gemini CLI — s
     ---
 
     Command: /cs:handoff <next-session-focus>
+
+-   :material-console:{ .lg .middle } **[`/cs-workflow-build`](cs-workflow-build.md)**
+
+    ---
+
+    Command: /cs:workflow-build <task-description>
 
 -   :material-console:{ .lg .middle } **[`/cs-write-a-skill`](cs-write-a-skill.md)**
 
