@@ -3,7 +3,7 @@
   "name": "claude-code-skills",
   "description": "Production-ready skill packages for AI agents - Marketing, Engineering, Product, C-Level, PM, and RA/QM",
   "repository": "https://github.com/alirezarezvani/claude-skills",
-  "total_skills": 351,
+  "total_skills": 352,
   "skills": [
     {
       "name": "business-growth-skills",
@@ -2034,6 +2034,12 @@
       "description": "Use when the user asks to prepare for SOC 2 audits, map Trust Service Criteria, build control matrices, collect audit evidence, perform gap analysis, or assess SOC 2 Type I vs Type II readiness."
     },
     {
+      "name": "deep-research",
+      "source": "../../research/deep-research/skills/deep-research",
+      "category": "research",
+      "description": "Run a disciplined, multi-source research investigation for a high-stakes question or decision \u2014 fan-out web search across many channels, parallel sub-agents, source triangulation (each claim backed by \u22653 independent sources), an adversarial review pass, and every source saved to its own file with verbatim quotes for reuse. Use when a low-quality answer is expensive: strategy work, comparing N products/methods/markets, validating a hypothesis with external data, or mapping how a field works. NOT for quick fact-checks (answer directly), structured 12-dimension competitor scoring (use competitive-teardown), or fast topic overviews where the decision risk is low (use the research router instead)."
+    },
+    {
       "name": "dossier",
       "source": "../../research/dossier/skills/dossier",
       "category": "research",
@@ -2184,7 +2190,7 @@
       "description": "Regulatory affairs and quality management skills"
     },
     "research": {
-      "count": 8,
+      "count": 9,
       "source": "../../research",
       "description": "Research orchestrator + 6 specialists (pulse, litreview, grants, dossier, patent, syllabus, notebooklm)"
     },
